@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Dio Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![alt text](Home.png)
 
-## Available Scripts
+## 📃Descrição
 
-In the project directory, you can run:
+Este projeto é um clone da plataforma DIO, desenvolvido com React.js e Styled Components. Seu objetivo principal é replicar as funcionalidades essenciais da plataforma, como login, cadastro e feed de conteúdos.
 
-### `npm start`
+## 🚀 Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React.js**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **HTML, CSS:** Linguagens padrão para estrutura e estilização de páginas web.
+- **JavaScript:** Linguagem de programação para lógica e interação com o DOM.
+- **Styled Components**: Biblioteca para criação de componentes React com estilos personalizados e reusáveis.
+- **JSON Server**: Simula um backend RESTful leve para armazenar os dados da aplicação durante o desenvolvimento, facilitando a criação de requisições HTTP e o gerenciamento de estados.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚧 Pré-requisitos
 
-### `npm test`
+- **Node.js e npm (ou yarn)**: Certifique-se de ter o Node.js e o gerenciador de pacotes npm (ou yarn) instalados em seu sistema.
+- **Um editor de código:** Visual Studio Code, Sublime Text, Atom, etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📥 Instalação
 
-### `npm run build`
+1. Clone o repositório: `git clone https://github.com/Nickcarv18/dio-clone`
+2. Acesse a pasta do projeto: `cd dio-clone`
+3. Instale as dependências: `npm install`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 💻 Execução
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Inicie o servidor de desenvolvimento: `yarn start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - A aplicação será aberta em seu navegador padrão, geralmente em <http://localhost:3000>.
 
-### `npm run eject`
+1. Inicie JSON Server CLI: `yarn api`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    - O JSON Server CLI será iniciada em <http://localhost:8001>.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔧 Estrutura do Código
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    dio-clone/
+    ├── node_modules/
+    ├── public/
+    │   ├── favicon.ico
+    │   └── index.html
+    ├── src/
+    │   ├── assets/
+    │   │   ├── banner.png
+    │   │   └── logo-dio.png
+    │   ├── components/
+    │   │   ├── Button/
+    │   │   ├── Card/
+    │   │   ├── Header/
+    │   │   ├── Input/
+    │   │   └── UserInfo/
+    │   ├── pages/
+    │   │   ├── Cadastro/
+    │   │   ├── Feed/
+    │   │   ├── Home/
+    │   │   └── Login/
+    │   ├── services/
+    │   │   └── api.js
+    │   ├── styles/
+    │   │   └── global.js
+    │   ├── App.js
+    │   ├── index.js
+    │   ├── .gitignore
+    │   ├── db.json
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   ├── README.md
+    │   └── yarn.lock
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **components**: Contém componentes reutilizáveis como `Header`, `Button`, `Input`, etc.
+- **pages**: Contém as páginas da aplicação, no caso, a página `Home`, `Login`, `Feed` e `Cadastro`.
+- **db.json**: Arquivo de configuração do JSON Server, onde são armazenados os dados simulados da aplicação.
+- **services/api.js**: Arquivo de configuração da api com axios.
+- **styles**: Arquivo de estilo global.
+- **assets**: Contém arquivos de imagem e outros recursos estáticos.
 
-## Learn More
+## 🖌️ Layout
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/design/fvjQQNtqaUdpuNixvCZVav/DIO-CLONE?node-id=101-19&node-type=frame&t=uogyPZOF2d0U3VOX-0). É necessário ter conta no [Figma](https://figma.com/) para acessá-lo.
