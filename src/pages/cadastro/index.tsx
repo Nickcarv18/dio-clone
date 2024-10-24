@@ -24,7 +24,7 @@ const Cadastro = () => {
         mode: 'onChange',
     });
 
-    const onSubmit = async (formData) => {
+    const onSubmit = () => {
         navigate('/feed')
     };
 
@@ -40,7 +40,7 @@ const Cadastro = () => {
                 <TitleCadastro>Comece agora grátis</TitleCadastro>
                 <SubtitleCadastro>Crie sua conta e make the change._</SubtitleCadastro>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <Input placeholder="Nome completo" leftIcon={<MdPerson />} name="nome" errorMessage={errors.nome?.message}/>
+                    <Input placeholder="Nome completo" leftIcon={<MdPerson />} name="nome" control={control} errorMessage={errors.nome?.message}/>
                     <Input placeholder="E-mail" leftIcon={<MdEmail />} name="email"  control={control} errorMessage={errors.email?.message}/>
                     <Input type="password" placeholder="Senha" leftIcon={<MdLock />}  name="password" control={control} errorMessage={errors.password?.message}/>
                     <Button title="Criar minha conta" variant="secondary" type="submit"/>

@@ -11,6 +11,7 @@ import { api } from '../../services/api';
 import { useForm } from "react-hook-form";
 
 import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles';
+import { ILogin } from './types';
 
 const schema = yup.object({
     email: yup.string().email("E-mail não é válido").required("E-mail é obrigatório"),
@@ -26,7 +27,7 @@ const Login = () => {
         mode: 'onChange',
     });
 
-    const onSubmit = async (formData) => {
+    const onSubmit = async (formData: ILogin) => {
         try{
             const {data} = await api.get(`/users?email=${formData.email}&password=${formData.password}`);
             
