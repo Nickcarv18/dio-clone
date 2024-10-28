@@ -1,15 +1,14 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { MdEmail, MdLock } from 'react-icons/md';
-import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 
-import { api } from '../../services/api';
-
 import { useForm } from "react-hook-form";
 
+import { useContext } from 'react';
+import { AuthContext } from '../../context/auth';
 import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles';
 import { ILogin } from './types';
 
@@ -19,8 +18,7 @@ const schema = yup.object({
 }).required();
  
 const Login = () => {
-
-    const navigate = useNavigate()
+    const {handleLogin} = useContext(AuthContext);
 
     const {control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
@@ -28,19 +26,7 @@ const Login = () => {
     });
 
     const onSubmit = async (formData: ILogin) => {
-        try{
-            const {data} = await api.get(`/users?email=${formData.email}&password=${formData.password}`);
-            
-            if(data.length && data[0].id){
-                navigate('/feed') 
-                return
-            }
-
-            alert('Usuário ou senha inválido')
-        }catch(e){
-            console.log(e)
-            alert("HOUVE UM ERRO, tente novamente")
-        }
+        handleLogin(formData);
     };
 
     return (<>

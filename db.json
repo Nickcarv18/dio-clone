@@ -1,7 +1,7 @@
 {
     "users": [
-      { "id": 1, "name": "Pablo", "email": "pablo@email.com", "senha":"12345678" },
-      { "id": 2, "name": "José", "email": "jose@email.com", "senha":"12345678" },
-      { "id": 3, "name": "Niooli Carvalho", "email": "nicoli@email.com", "senha":"12345678" }
+      { "id": 1, "name": "Pablo", "email": "pablo@email.com", "password":"12345678" },
+      { "id": 2, "name": "José", "email": "jose@email.com", "password":"12345678" },
+      { "id": 3, "name": "Niooli Carvalho", "email": "nicoli@email.com", "password":"12345678" }
     ]
 }

@@ -76,3 +76,13 @@ export const Input = styled.input`
     border: 0;
     color: #FFFFFF;
 `
+
+export const LinkSair = styled.a`
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    color: #FFFFFF;
+    margin-left: 16px;
+` 

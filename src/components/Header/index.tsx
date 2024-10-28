@@ -1,19 +1,22 @@
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo-dio.png";
+import { AuthContext } from "../../context/auth";
 import { Button } from "../Button";
 import {
   BuscarInputContainer,
   Container,
   Input,
+  LinkSair,
   Menu,
   MenuRight,
   Row,
   UserPicture,
   Wrapper
 } from "./styles";
-import { IHeader } from "./types";
 
-const Header = ({autenticado}: IHeader) => {
+const Header = () => {
+  const {user, handleSignOut} = useContext(AuthContext);
 
   const navigate = useNavigate();
   const handleClickSignIn = () => {
@@ -28,8 +31,10 @@ const Header = ({autenticado}: IHeader) => {
     <Wrapper>
       <Container>
         <Row>
-          <img src={logo} alt="Logo Dio" />
-          {autenticado ? (
+          <Link to="/">
+            <img src={logo} alt="Logo Dio" />
+          </Link>
+          {user.id ? (
             <>
             <BuscarInputContainer>
               <Input placeholder="Buscar..."/>
@@ -40,8 +45,10 @@ const Header = ({autenticado}: IHeader) => {
           ): null}
         </Row>
         <Row>
-        {autenticado ? (
+        {user.id ? (<>
             <UserPicture src="https://avatars.githubusercontent.com/u/68923693?v=4"/>
+            <LinkSair href="#" onClick={handleSignOut}>Sair</LinkSair>
+          </>
           ): (
             <>
               <MenuRight href="/">Home</MenuRight>
