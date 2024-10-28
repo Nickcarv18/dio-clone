@@ -1,7 +1,6 @@
-import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo-dio.png";
-import { AuthContext } from "../../context/auth";
+import { useAuth } from "../../hooks/useAuth";
 import { Button } from "../Button";
 import {
   BuscarInputContainer,
@@ -16,7 +15,7 @@ import {
 } from "./styles";
 
 const Header = () => {
-  const {user, handleSignOut} = useContext(AuthContext);
+  const {user, handleSignOut} = useAuth();
 
   const navigate = useNavigate();
   const handleClickSignIn = () => {

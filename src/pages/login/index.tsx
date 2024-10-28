@@ -7,8 +7,7 @@ import { Input } from '../../components/Input';
 
 import { useForm } from "react-hook-form";
 
-import { useContext } from 'react';
-import { AuthContext } from '../../context/auth';
+import { useAuth } from '../../hooks/useAuth';
 import { Column, Container, CriarText, EsqueciText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles';
 import { ILogin } from './types';
 
@@ -18,7 +17,7 @@ const schema = yup.object({
 }).required();
  
 const Login = () => {
-    const {handleLogin} = useContext(AuthContext);
+    const {handleLogin} = useAuth();
 
     const {control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
